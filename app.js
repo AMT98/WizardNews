@@ -60,7 +60,7 @@ app.get('/posts/:id', (req, res) => {
             <span class="news-position">${post.id}. ▲</span>
             <a href="/posts/${post.id}">${post.title}</a>
             <small>(by ${post.name})</small>
-            
+            <p>${post.content}</p>
           </p>
           <small class="news-info">
             ${post.upvotes} upvotes | ${post.date}
