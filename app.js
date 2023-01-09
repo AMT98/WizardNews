@@ -45,6 +45,25 @@ app.get('/', (req, res) => {
 app.get('/posts/:id', (req, res) => {
   const id = req.params.id;
   const post = postBank.find(id);
+  if (!post.id) {
+    res.status(404)
+    const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Wizard News</title>
+      <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+      <header><img src="/logo.png"/>Wizard News</header>
+      <div class="not-found">
+        <p>Accio Page! 🧙‍♀️ ... Page Not Found</p>
+        <img src="/dumbledore-404.gif" />
+      </div>
+    </body>
+    </html>`
+    res.send(html)
+  } else {
   const html = `<!DOCTYPE html>
   <html>
   <head>
@@ -70,7 +89,7 @@ app.get('/posts/:id', (req, res) => {
   </body>
 </html>`;
 
-  res.send(html);
+  res.send(html);}
 });
 
 
