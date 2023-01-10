@@ -1,6 +1,4 @@
 const postBank = require('../postBank');
-const html = require("html-template-tag");
-
 
 const posts = postBank.list();
 
@@ -32,4 +30,4 @@ const html = `<!DOCTYPE html>
 </body>
 </html>`;
 
-module.exports = html
+module.exports = html;
