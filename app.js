@@ -17,8 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts/:id', (req, res) => {
-  const id = req.params.id;
-  const post = postBank.find(id);
+  const post = postBank.find(req.params.id);
   if (!post.id) {
     res.status(404);
     res.send(postDetail.error);
